@@ -1,0 +1,13 @@
+#define NAME Vanitha 
+/*
+  These are comments 
+*/
+Dear Sir,
+
+   As I am not keeping well, I cannot attend college for three
+days starting 1-July-2016.
+
+Please approve my leave application
+
+Regards
+NAME
