@@ -12,7 +12,7 @@ void ConvertToUpperCase(char *word)
       if ((word[idx] >= 97) && (word[idx] <= 122))
          word[idx] = word[idx] - 32;
    }
-
+   
 }
 main()
 {
@@ -27,13 +27,13 @@ main()
 
   printf("Enter the input file name : ");
   retVal = scanf("%s", inputFileName);
-
+  
   printf("Enter the output file name : ");
   retVal = scanf("%s", outputFileName);
 
-
+  
   inputFilePtr = fopen(inputFileName,"r"); /* Opening the file for reading */
-    if (inputFilePtr == NULL)
+  if (inputFilePtr == NULL) 
   {
     printf("File open error with %s \n",inputFileName);
     printf("Error number retuned = %d \n", errno);
@@ -44,7 +44,7 @@ main()
 
 
   outputFilePtr = fopen(outputFileName,"w"); /* Opening the file for reading */
-  if (outputFilePtr == NULL)
+  if (outputFilePtr == NULL) 
   {
     printf("File open error with %s \n",outputFileName);
     printf("Error number retuned = %d \n", errno);
@@ -56,22 +56,20 @@ main()
   while(flag == 1)
   {
     retVal = fscanf(inputFilePtr,"%s",myWord) ; /* Reading from the file */
-
+    
     if (retVal > 0)
     {
-      printf("The data read from file is |%s| \n", myWord);
-      ConvertToUpperCase(myWord);
+      printf("The data read from file is |%s| \n", myWord); 
+      ConvertToUpperCase(myWord);         
       fprintf(outputFilePtr,"%s", myWord);
     }
     else if (retVal == EOF)
-          flag = 0;
+          flag = 0; 
   }
-  
-  
+
+
   fclose(inputFilePtr); /* closing the file after reading */
   fclose(outputFilePtr); /* closing the file after reading */
-}
+} 
 
 
-
-                                                                  34,1          84%
