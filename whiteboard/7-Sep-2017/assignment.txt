@@ -19,4 +19,8 @@ comparisons between Linear and Binary search
 Also find the time difference of execution to
 between Binary search and linear search
 
+9. Learn HTML basics from w3 Tutorials and 
+write the output of the above program into HTML file
+properly formatted
+
 
