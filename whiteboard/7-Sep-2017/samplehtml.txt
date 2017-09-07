@@ -1,0 +1,23 @@
+<HTML>
+<H1>  <CENTER> 
+
+    <U>This is my first HTML document </U>
+
+     </CENTER> </H1>
+
+<p>
+   At VLSI GURU institute I am learning to build
+   embedded software applications
+</P>
+
+<p> 
+     The <B>best way</B> to learn HTML is to write a HTML
+     file of your own by refering to a <I> tutorial </I>
+</P>
+
+   <a href="https://www.w3schools.com">This is the link to where you can find the tutorial
+   </a>
+
+
+
+</HTML>
