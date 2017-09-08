@@ -4,10 +4,10 @@
 1. Remove unwanted and commented code
 1. Use meaningfull names for variable
 1. Declare only one variable in aline and comment as follows
-
-   int windowIdx ; /* index to window */
-   float temp ; /* Hold temp */
-
+```
+   **int**  windowIdx ; */* index to window */*
+   **float** temp ;     * /* Hold temp */*
+```
 1. Code has to be intended properly
  ```   
     if (condition )
