@@ -1,7 +1,7 @@
-<HTML>
 
-<b>Date of submission 11-Sep by 4:00 PM
-Submission has to be made through github only </b>
+
+Date of submission 11-Sep by 4:00 PM
+Submission has to be made through github only 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
