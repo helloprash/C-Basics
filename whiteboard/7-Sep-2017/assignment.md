@@ -23,6 +23,8 @@
 
 
 ## Algorithm for Binary Search
+```javascript
+
 Procedure binary_search
    A ← sorted array
    n ← size of array
@@ -50,4 +52,4 @@ Procedure binary_search
    
 end procedure
 
-</HTML>
+```
