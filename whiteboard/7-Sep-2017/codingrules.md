@@ -8,6 +8,7 @@
    int   windowIdx ;   /* index to window */
    float temp ;        /* Hold temp */
 ```
+
 1. Code has to be intended properly
  ```   
     if (condition )
