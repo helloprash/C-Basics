@@ -1,3 +1,10 @@
+<HTML>
+
+<b>Date of submission 11-Sep by 4:00 PM
+Submission has to be made through github only </b>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
 1. Read an array of 1000  numbers from a file
 
 2. Implement Binary search to check whether
@@ -52,3 +59,5 @@ Procedure binary_search
    end while
    
 end procedure
+
+</HTML>
