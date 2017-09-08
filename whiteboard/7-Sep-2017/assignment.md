@@ -13,23 +13,21 @@ Algorithm for Binary search is give below.
 
 1. HOw to generate 1000 nums
 
-1.Write a program in C to generate 1000 random numbers
+    1.Write a program in C to generate 1000 random numbers
 
-1. Copy paste that to excel Use MS excel as a col
+    1. Copy paste that to excel Use MS excel as a col
 
-1.Sort it using Excel function and copy paste it back
-into your input file
+    1.Sort it using Excel function and copy paste it back into your input file
 
 1. Implement Linear search as discussed in class.
 
-1. Compare the difference in terms of number of
-comparisons made by  Linear and Binary search
-Also find the time difference of execution to
-between Binary search and linear search
+1. Compare the difference in terms of number of comparisons made by  Linear and Binary search Also find the time difference of execution to between Binary search and linear search. Draw a table and write down the difference in performance between two when the item you searched was
+      1. Was there in the array
+      1. Was not there in the array
+      1. Was there toward the beginning of the array
+      1. Was there towards the end of array
 
-1. Learn HTML basics from w3 Tutorials and 
-write the output of the above program into HTML file
-properly formatted
+1. Learn HTML basics from w3 Tutorials and  write the output of the above program into HTML file properly formatted
 
 
 ## Algorithm for Binary Search
