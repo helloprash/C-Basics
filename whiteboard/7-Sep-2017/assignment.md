@@ -14,11 +14,11 @@
     1. *Copy paste that to excel Use MS excel as a col*
     1. *Sort it using Excel function and copy paste it back into your input file*
 1. Implement Linear search as discussed in class run linear search **on the unsorted array** sorted array is only fp and measure the basic performance parmeters mentioned in the top. 
-1. Compare the performance parameters for   Linear and Binary search Draw a table and write down the difference in performance between two when the item you searched was
-      1. Was there in the array
-      1. Was not there in the array
-      1. Was there toward the beginning of the array
-      1. Was there towards the end of array
+1. Compare the performance parameters for   Linear and Binary search Draw a table and write down the difference in performance between two when the item you searched 
+      1. Was there in the array  (unsorted array)
+      1. Was not there in the array (unsorted array)
+      1. Was there toward the beginning of the array (unsorted array)
+      1. Was there towards the end of array (unsorted array)
 
 1. Learn HTML basics from  W3 Tutorials and  write the output of the above program into HTML file properly formatted
 
