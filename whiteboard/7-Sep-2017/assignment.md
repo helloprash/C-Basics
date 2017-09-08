@@ -11,11 +11,11 @@
 the given number is there or not.
 Algorithm for Binary search is give below.
 
-1. HOw to generate 1000 nums
+1. How to generate 1000 nums
 
     1.Write a program in C to generate 1000 random numbers
 
-    1. Copy paste that to excel Use MS excel as a col
+    1.Copy paste that to excel Use MS excel as a col
 
     1.Sort it using Excel function and copy paste it back into your input file
 
