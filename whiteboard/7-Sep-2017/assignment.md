@@ -20,7 +20,8 @@
       1. Was there toward the beginning of the array (unsorted array)
       1. Was there towards the end of array (unsorted array)
 
-1. Learn HTML basics from  W3 Tutorials and  write the output of the above program into HTML file properly formatted
+1. Learn HTML basics from  https://www.austincc.edu/hr/profdev/eworkshops/docs/HTML_Basics.pdf and  write the output of the above program into HTML file properly formatted
+   
 
 
 ## Algorithm for Binary Search
