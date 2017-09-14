@@ -1,4 +1,4 @@
-# Implement a stack in C**
+# Implement a stack in C
 
 ## Requirements
 
@@ -11,7 +11,7 @@
  * Should have limit on number of elements the stack can hold 
 
 
-## Thought process
+## How to approach the problem
 * What is the data structure you need to implement the stack
 * What are the information you need to store in variables to
    satisfy the above requirements
