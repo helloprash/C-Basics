@@ -9,5 +9,5 @@
     * char *strchr(const char *str, int c)
     * size_t strlen(const char *str)
     * char *strcpy(char *dest, const char *src)
- * You will notice that the first or second  parameter of all these function is defined as **const char** find out what is significance of this keyword **const** in a function parameter or what difference does it makes when you mention the work **const** in the parameter list
+ * You will notice that the first or second  parameter of all these function is defined as **const char** find out what is significance of this keyword **const** in a function parameter or what difference does it makes when you mention the word **const** in the parameter list. You may need to google and or read text books to find the answer.
  
