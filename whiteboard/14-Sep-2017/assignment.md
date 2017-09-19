@@ -13,5 +13,5 @@
     1. char *strchr(const char *str, int c)
     1. size_t strlen(const char *str)
     1. char *strcpy(char *dest, const char *src)
-    1. You will notice that the first or second  parameter of all these function is defined as **const char** find out what is significance of this keyword **const** in a function parameter or what difference does it makes when you mention the word **const** in the parameter list. You may need to google and or read text books to find the answer.
+    1. You will notice that the first or second  parameter of all these function is defined as **const char** find out what is significance of this keyword **const** in a function parameter or what difference does it makes when you mention the word **const** in the parameter list. **You may need to google and or read text books to find the answer.**
  
