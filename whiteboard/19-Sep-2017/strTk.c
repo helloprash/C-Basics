@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-int strTok(char *input, char delimiter,char *token)
+int strTok(char *input, char delimiter,char *token) 
 {
    /* if the function has hit the end of string it wil
       return ZERO otherwise 1 */
