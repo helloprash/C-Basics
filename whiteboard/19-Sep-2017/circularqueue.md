@@ -6,7 +6,7 @@
 * Addition and deletion happening when queue is not FULL
 * Addition and deletion happening when tail is pointing to the MAX of array
 
-'''
+```
    /* global variables */
    int queue[100]; 
    int head = 0 ;
@@ -59,4 +59,4 @@
            }
        }
    }
-   '''
+   ````
