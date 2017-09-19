@@ -1,7 +1,7 @@
 # Assignement to be submitted on 19-Sep
 * Implement strtok() function as discussed in the class, 
 * Implement strlen() and strcpy() function.
-* How to test:  Write a program which will make use of your implementation of strtok() like extracting token, now give the same input to the buildin function strtok() 
+* How to test all the above function :  Write a program which will make use of your implementation of strtok() like extracting token, now give the same input to the buildin function strtok() do the same from strlen() and strcpy()
 * Study the behaviour of build in function strchr()  and implement it by yourself and test it against the buildin fucntion strch()
 **Reading Assignment**
  * If you look at the prototype or signature of the following functions 
