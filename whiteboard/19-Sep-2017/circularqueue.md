@@ -1,4 +1,5 @@
 # Circular Queue 
+## Implement a Circular queue in C by 
 ## Consider the following conditions
 * Addition and deletion happening when queue is empty
 * Addition and deletion happening when queue is FULL
