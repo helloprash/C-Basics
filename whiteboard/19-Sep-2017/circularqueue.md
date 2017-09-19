@@ -14,10 +14,16 @@
    
    int AddQueue(int element)
    {
+      /* First check Queue is full or not */
+      /* If queue is full print the message queue is full and return */
+      /* else add the element to queue and increment the tail */
    }
    
    int DeleteQueue()
    {
+      /* First check Queue is empty or not */
+      /* if empty print a message saying queue is empty and return */
+      /* Else remove the element and increment the head */
    }
    
    main()
