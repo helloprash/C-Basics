@@ -39,11 +39,12 @@
               case 1 : {
                           printf("Enter the value to added to queue: ");
                           scanf("%d", &data);
-                          AddQueue();
+                          AddQueue(data);
                           break ;
                        }
               case 2 : {
-                          DeleteQueue();
+                          data = DeleteQueue();
+                          printf("%d removed from queue \n");
                           break;
                         }
              case 3 : {
