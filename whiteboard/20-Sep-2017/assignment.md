@@ -5,8 +5,8 @@ In this programs we had used array index eg a = array[i]. In this assignment you
 pointers only and not to use array index
 Eg: if you want want to access the first element of an array earlier we say x = array[0]
 
-now we say 
-ptr = array ;
-x = *ptr; 
-ptr++ ;
-x = *ptr ; // instead of saying array[1] 
+* now we say 
+* ptr = array ;
+* x = *ptr; 
+* ptr++ ;
+* x = *ptr ; // instead of saying array[1] 
