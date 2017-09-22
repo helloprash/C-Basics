@@ -6,3 +6,4 @@
  ** Arrays cannot destroyed and created at run time
  ** Need to know size of the array before.
  
+### This is what we are going to solve with Linked list
