@@ -1,5 +1,7 @@
 # Assignment to be submitted on 25-Sep-2017 Monday
 
+#### Based on the discussion we had today,you are expected to do the following exercise. Refer to whiteboard what is captured in the github.
+
 ## 1. Implementation of Single Linked List
 1. Operation of Linked list
    1. Create Single Linked list
@@ -26,6 +28,7 @@
           
           /* Declare head of the list as a Global Variable */
           NODE  *head ;
+          NODE  *scanPtr ;
           
           int main()
           {
@@ -102,11 +105,12 @@
           
           /* Declare head of the list as a Global Variable */
           NODE  *head ;
-          
+          NODE  *scanPtr ;
           int main()
           {
               int flag ;
               int choice ;
+              
               flag = 1 ;
               
               while (flag ==1)
