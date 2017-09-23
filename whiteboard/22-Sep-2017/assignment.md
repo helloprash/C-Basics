@@ -1,5 +1,6 @@
 # Assignment to be submitted on 25-Sep-2017 Monday
-This assignment is quite different from the assignment I had given you earlier. Through this assignment I am introducing you to a new concept called **Incremental Development**  a very **Powerful Concept** in software development. Many complex softwares are developed with this approach. This approach will be very useful  during your interviews too. So if you do not follow this approch I will reject your submission.
+This assignment is quite different from the assignment I had given you earlier. Through this assignment I am introducing you to a new concept called **Incremental Development**  a very **Powerful Concept** in software development. Many complex softwares are developed with this approach. This approach will be very useful  during your interviews and in your professional career too. 
+If you do not follow this approch I will reject your submission.
 
 Read the **INSTRUCTIONS CAREFULLY** and do the assigement....
 ## Instructions
@@ -126,7 +127,9 @@ Read the **INSTRUCTIONS CAREFULLY** and do the assigement....
           }
           
     ````
-## 2. Implementation of Double  Linked List ## 
+    
+    
+## 2. Implementation of Double  Linked List 
 
 1. Read the problem 2 for the implementation of Double Link List first.
    1. Copy paste the outline code and compile it 
