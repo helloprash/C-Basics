@@ -166,7 +166,7 @@ Read the **INSTRUCTIONS CAREFULLY** and do the assigement....
    1. **Upload the file  to github again same name - Do not delete the first one. This will create version no 7 for this file**
    1. Implement the function **DeleteList()**
    1. Compile it and run - You should be able to delete the list  and now if you try to display it should say list is empty
-   1. **Upload the file  to github again same name - Do not delete the first one. This will create version no 8 for this file**
+   1. **Upload the file  to github again same name - Do not delete the first one. This will create version no 8 for this file **
    
    ** Please note that I will check for eight version and see the difference between them to see whether you had written each function in  step by step approach or not. IF not I will reject it **
    
