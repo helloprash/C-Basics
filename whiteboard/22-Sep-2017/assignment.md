@@ -1,4 +1,40 @@
 # Assignment to be submitted on 25-Sep-2017 Monday
+This assignment is quite different from the assignment I had given you earlier. Through this assignment I am introducing you to a new concept called **Incremental Development**  a very **Powerful Concept** in software development. Many complex softwares are developed with this approach. This approach will be very useful  during your interviews too. So if you do not follow this approch I will reject your submission.
+
+Read the **INSTRUCTIONS CAREFULLY** and do the assigement....
+## Instructions
+   1. Do this assignment is **steps as I had explained below. IF you do not follow the steps I will REJECT IT** 
+   1. Read the problem 1 for the implementation of Single Link list first.
+   1. Copy paste the outline code and compile it 
+   1. You should get a linker error for the functions
+   1. CreateList()
+      1. AddNode()
+      1. DeleteNode()
+      1. DisplayList()
+      1. DeleteList()
+      1. SearchList()
+   1. Do empty implememtation of these functions ie just write outline of function with no code and compile again
+   1. All Linker errors should have gone away now
+   1. Run the program and see menu is working or not. When you select 7 the program has to quit
+   1. **Upload the file to Github now- This will create a version no 1 for this file**
+   1. Implement the function **CreateList()** now
+   1. Compile it and run - No output at this stage
+   1. **Upload the file  to github again same name - Do not delete the first one. This will create version no 2 for this file**
+   1. Implement the function **DisplayList()**
+   1. Compile it and run - You should be able to see the list now
+   1. **Upload the file  to github again same name - Do not delete the first one. This will create version no 3 for this file**
+   1. Implement the function **SearchList()**
+   1. Compile it and run - The search function should prompt for the data to be searched and you search for it in the list and say 
+       it is found or not.
+   1. **Upload the file  to github again same name - Do not delete the first one. This will create version no 4 for this file**
+   1. Implement the function **AddNode()**
+   1. Compile it and run - You should be able to add new node and display the list correctly
+   1. **Upload the file  to github again same name - Do not delete the first one. This will create version no 5 for this file**
+   1. Implement the function **DeleteNode()**
+   1. Compile it and run - You should be able to delete a node and display the list correctly
+   1. **Upload the file  to github again same name - Do not delete the first one. This will create version no 6 for this file**
+
+** When I look at your assignment I need to SEE THE SIX VERSION CORRECTLY in github, otherwise I will reject it. 
 
 #### Based on the discussion we had today,you are expected to do the following exercise. Refer to whiteboard what is captured in the github.
 
@@ -70,6 +106,11 @@
                           SearchList();
                           break ;
                       }
+                      case 7:
+                      {
+                          flag = 0 ;
+                          break ;
+                      }
                       default:
                       {
                          break ;
@@ -81,7 +122,7 @@
     ````
 ## 2. Implementation of Double  Linked List
 1. Operation of Linked list
-   1. Create Single Linked list
+   1. Create Double Linked list
    1. Display the content of the linked list
    1. Delete an element in the linked list
    1. Add an element into the linked list
@@ -93,14 +134,16 @@
       1. CreateList()
       1. AddNode()
       1. DeleteNode()
-      1. DisplayList()
+      1. DisplayListForward()
+      1. DisplayListReverse()
       1. DeleteList()
       1. SearchList()
       ````
          typedef struct node 
           {
              int data ;
-             struct node *next ;
+             struct node *left ;
+             struct node *right ;
           } NODE ;
           
           /* Declare head of the list as a Global Variable */
