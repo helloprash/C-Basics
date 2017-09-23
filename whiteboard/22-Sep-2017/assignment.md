@@ -224,15 +224,20 @@ Read the **INSTRUCTIONS CAREFULLY** and do the assigement....
                       }
                       case 4:
                       {
-                          DisplayList() ;
+                          DisplayForward() ;
                           break ;
                       }
                       case 5:
                       {
+                          DisplayForward() ;
+                          break ;
+                      }
+                      case 6:
+                      {
                            DeleteList() ; /* travese through the list and remove each element by element */
                            break ;
                       }
-                      case 6:
+                      case 7:
                       {
                           SearchList();
                           break ;
