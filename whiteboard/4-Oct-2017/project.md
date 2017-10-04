@@ -6,18 +6,25 @@
 ## -----------------------------------------------------------------------------------------------
 ##
 ## Problem
-### A mobile service provider company like Vodaphone has a huge database of usage by various customer they want to study
-### the pattern on usage and come out with a new scheme (charing plans) for various user. For this you are expect to
-### develop a software.
+### A mobile service provider company like Vodaphone has a huge database of usage by various customer they want to study the pattern on usage and come out with a new scheme (charing plans) for various user. For this you are expect to develop a software.
 
-### Objective of this exercise is to develop a software which read data from a csv file and generate the output that
-### can be visualized in the form graphs.
+### Objective of this exercise is to develop a software which read data from a csv file and generate the output that can be visualized in the form graphs.  As the first step you will be read data from .csv file classify the data according to the requirements and store the results into a array. Then the data stored in the array is written to .csv file
+
 
 ## Statement
 Usage data of the users is stored in a .csv file as following
-NAme, age, usage, plan
 
-THis is has to read from .csv file and stored in a structure
+Name, age, usage, planID
+Anil,   20,   300,    3
+Sudhir, 35,   100     2
+Vipin   18,   50,      2
+.........................
+..........................
+........................
+........................
+Hema   40,  291,   1
+
+This is has to be read from .csv file and stored in a **linked list** based on the following structure
 ```
 struct usage
 {
