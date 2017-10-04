@@ -13,7 +13,7 @@
 
 ## Statement
 Usage data of the users is stored in a .csv file as following
-
+```
 Name, age, usage, planID
 Anil,   20,   300,    3
 Sudhir, 35,   100     2
@@ -23,7 +23,7 @@ Vipin   18,   50,      2
 ........................
 ........................
 Hema   40,  291,   1
-
+````
 This is has to be read from .csv file and stored in a **linked list** based on the following structure
 ```
 struct usage
