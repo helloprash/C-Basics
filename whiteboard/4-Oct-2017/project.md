@@ -44,3 +44,23 @@ Percent | Usage
  30%   |  120
  20%   |  80
  10%   |  40
+
+You need find out how many usesrs are there in the 100% bracket how many are there in 90% bracket and so on in the 10% bracket
+For example of the a users usage is 350 hours which greater than 90% but less than 100% that user will fall into 100% bracket
+Another user whos usage in 240 will fall into 60% bracket, another user who used 281 hours will fall into 80% bracket.
+
+You can create an array to struct as follows to store this classified data
+
+```
+struct classifed
+{
+   int bracket
+   int numberOfUsers
+}
+
+Finally you need to write the classified data into a .csv file
+
+## After which I will explain 
+1. Visulization part
+1. Concept of Union
+1. enums
