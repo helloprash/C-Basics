@@ -60,7 +60,7 @@ struct classifed
 ```
 Finally you need to write the classified data into a .csv file
 
-## After which I will explain 
-1. Visulization part
-1. Concept of Union
-1. enums
+## After which I will explain the new concepts of (based on this project)
+1. Data Visulization 
+1. Union
+1. Enums
