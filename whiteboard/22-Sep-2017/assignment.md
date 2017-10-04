@@ -9,7 +9,7 @@ Read the **INSTRUCTIONS CAREFULLY** and do the assigement....
    1. Copy paste the outline code and compile it 
    1. You should get a linker error for the functions
    1. CreateList()
-      1. AddNode()
+      1. InsertNode()
       1. DeleteNode()
       1. DisplayList()
       1. DeleteList()
