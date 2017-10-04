@@ -28,3 +28,19 @@ struct usage
 }
 ```
 
+You need to create a linked list of strucutre using the above data.
+
+Once the linked list is created, you need to read/scan through the list and find the customer who had the max usage. Take that value as the max. Now find the 90% , 80% 70%, 60%, 50% 40% of the max value. and example is shown below
+
+Percent | Usage
+----    | ----
+ 100%  |  400 hours
+ 90%   |  360
+ 80%   |  320
+ 70%   |  280
+ 60%   |  240
+ 50%   |  200
+ 40%   |  160
+ 30%   |  120
+ 20%   |  80
+ 10%   |  40
