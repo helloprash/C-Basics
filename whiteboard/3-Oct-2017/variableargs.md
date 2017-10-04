@@ -6,8 +6,11 @@ int y = 20 ;
 int z = 30;
 
 printf("Hello how are you I am %s\n", myname);
+
 printf("The values are %d %d %d", x,y,z);
+
 printf("The first two values are %d %d %d", x,y);  //Error number of %d does not match with variables
+
 printf("The first value is %d  %d\n", x, name); //Error number of %d does not match with variables
 
 ## This means the number of variable has to match with the format specfier in the control string of a printf()
