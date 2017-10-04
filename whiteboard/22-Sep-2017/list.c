@@ -31,12 +31,17 @@ main()
      ReadDataFromSensor() ;
      node = (WEATHER*) malloc(sizeof(WEATHER));
      if (start == NULL)
-        start = node ; /* Mark the beginning of the list */
-        
-     ptr1->next = node ; /* Link  the previous node's next pointer to the newly created node */
-     
-     ptr1 = node ; /* Make ptr1 point to newly creted node */
-     node->next = NULL ; /* always set the next to NULL after creation in case this is the last one end is always marked */
+     {  
+      start = node ; /* Mark the beginning of the list */
+      ptr1 = node ;
+      node->next  = NULL ;
+     }  
+     else
+     {
+        ptr1->next = node ; /* Link  the previous node's next pointer to the newly created node */
+        ptr1 = node ; /* Make ptr1 point to newly creted node */
+        node->next = NULL ; /* always set the next to NULL after creation in case this is the last one end is always marked */
+     }
      printf("Address of node is %x \n", node);
      node->windSpeed = 10 ;
      node->direction =  'N' ;
