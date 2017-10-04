@@ -10,9 +10,12 @@
 
 ### Objective of this exercise is to develop a software which read data from a csv file and generate the output that can be visualized in the form graphs.  As the first step you will be read data from .csv file classify the data according to the requirements and store the results into a array. Then the data stored in the array is written to .csv file
 
+1. Read Data from .csv file and store it into a linked list
+1. Classify the data based on the requirements given in the next section and store results into a array
+1. Write the contents on the results array into a .csv file
 
-## Statement
-Usage data of the users is stored in a .csv file as following
+
+####Usage data of the users is stored in a .csv file as per the following format
 ```
 Name, age, usage, planID
 Anil,   20,   300,    3
@@ -24,7 +27,9 @@ Vipin   18,   50,      2
 ........................
 Hema   40,  291,   1
 ````
-This is has to be read from .csv file and stored in a **linked list** based on the following structure
+
+The above  has to be read from .csv file and stored in a **linked list** based on the following structure
+
 ```
 struct usage
 {
@@ -35,9 +40,9 @@ struct usage
 }
 ```
 
-You need to create a linked list of strucutre using the above data.
+### Requirments for classification
 
-Once the linked list is created, you need to read/scan through the list and find the customer who had the max usage. Take that value as the max. Now find the 90% , 80% 70%, 60%, 50% 40% of the max value. and example is shown below
+Once the linked list is created, you need to read/scan through the list and find the customer who had the max or highest usage. Take that value as the max. Now find the 90% , 80% 70%, 60%, 50% 40% of the max value. as example is shown below. Let say the among all the customer the max usage was for two customer who made calls for 400 hours in that month. Now take 400 as 100% calculate 90 % of 400, 80% of 400 ....... as shown below.
 
 Percent | Usage
 ----    | ----
