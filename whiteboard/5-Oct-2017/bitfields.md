@@ -58,7 +58,7 @@ int main()
 Operator | Meaning 
 ---------|------
  &	 | AND 
-      ^  | XOR
-      ~  | One's Compliment
+ ^  | XOR
+ ~  | One's Compliment
 <<	 | Left shift
 >>	 | Right Shift
