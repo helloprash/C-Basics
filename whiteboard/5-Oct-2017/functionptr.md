@@ -41,6 +41,11 @@ int PlanFOUR(int usage)
 ** Declare an array of function pointers and assign the address of above functions to it  **
 ```
 int (*arrayfxnpointer[4])(int)
+// Assign address of the four functions to it
+ arrayfxnpointer[0] = &PlanONE ;
+ arrayfxnpointer[1] = &PlanTWO ;
+ arrayfxnpointer[2] = &PlanTHREE ;
+ arrayfxnpointer[3] = &PlanFOUR ;
 ```
 
 Call the corresponding function pointer from the array
