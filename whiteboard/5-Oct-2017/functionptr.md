@@ -1,5 +1,11 @@
 # Function Pointers
 
+###Just like we have pointers which can hold address of variables, we can have pointers which holds the address of instructions stored in the memory
+
+### What are fucntions ? Function are set of instruction in the memory packed a block. Now can we imagine a pointer holding the starting address of a function ? 
+
+### Such a pointer is called a function pointer
+
 In previous days example let us say in the structure
 ```
 typedef struct usage
