@@ -6,7 +6,23 @@
 
 ### Such a pointer is called a function pointer
 
+### Just like we have an array of pointers we can have an array of function pointers.....
+Each element in thhe array of function pointer can point to a different funtion.
+
+ZERO-th element point to function which computes the billing for PLAN-1 and takes hours as input
+FIRST-st element point to function which computes the billing for PLAN-2 and takes hours as input
+SECOND- element point to function which computes the billing for PLAN-3 and takes hours as input
+THIRD element point to function which computers the billing for PLAN-4 and takes hours as input
 In previous days example let us say in the structure
+
+TO Invoke the correct billing plan what we can do is 
+
+Call the corresponding function pointer from the array
+```
+(*arrayfxnpointer[node->pan_id-1])(node->usage)
+```
+
+
 ```
 typedef struct usage
 {
