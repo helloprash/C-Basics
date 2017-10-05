@@ -62,4 +62,4 @@ Operator | Meaning
  ~  | One's Compliment
 <<	 | Left shift
 ">>"	 | Right Shift
-|   | OR
+pipe   | OR
