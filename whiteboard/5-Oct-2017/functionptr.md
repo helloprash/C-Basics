@@ -50,3 +50,41 @@ hours | Charges
 100   | 40ps
 100   | 50ps
 more  | 30ps
+
+
+```
+void DoBilling()
+{
+   /* Read the node */
+   /* Read Plan ID */
+   
+   switch(planID)
+   {
+   case 1 : {
+             //Implement the logic given in Plan-1 Table */
+             break ;
+          }
+  case 2 : {
+             //Implement the logic given in Plan-2 Table */
+             break ;
+          }
+  case 3:  {
+             //Implement the logic given in Plan-3 Table */
+             break ;
+          }
+ case 4 : {
+             //Implement the logic given in Plan-4 Table */
+             break ;
+          }
+   }
+}
+main()
+{
+  ReadRecordsIntoLinkedList();
+  max = FindMax();
+  FindPercentageOfMax(max);
+  Classify();
+  DoBilling();
+}
+
+```
