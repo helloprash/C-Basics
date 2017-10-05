@@ -8,13 +8,14 @@ typedef struct usage
     int  age ;
     int usage;
     int planID ;
+    int monthlyCharges ;
     struct usage *next ;
 } USAGE;
 ```
 
 We want to do billing based on the plan ID. Plan ID can take values 1,2,3,4 
 
-Plan 1  
+Plan 1  (Base charges Rs 100)
 
 hours | Charges
 ------|---------
@@ -23,7 +24,7 @@ hours | Charges
 100   | 55ps
 more  | 60ps
 
-Plan 2
+Plan 2 (Base charges 300)
 
 hours | Charges
 ------|---------
@@ -32,7 +33,7 @@ hours | Charges
 100   | 50ps
 more  | 55ps
 
-Plan 3   
+Plan 3   (Base charges 400)
 
 hours | Charges
 ------|---------
@@ -41,7 +42,7 @@ hours | Charges
 100   | 50ps
 more  | 55ps
 
-Plan 4   
+Plan 4    (Base charges 500)
 
 hours | Charges
 ------|---------
