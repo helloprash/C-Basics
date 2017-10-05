@@ -61,5 +61,5 @@ Operator | Meaning
  ^  | XOR
  ~  | One's Compliment
 <<	 | Left shift
->>	 | Right Shift
-|   | OR
+">>"	 | Right Shift
+"|"   | OR
