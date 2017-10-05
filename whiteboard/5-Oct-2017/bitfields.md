@@ -56,10 +56,10 @@ int main()
 
 ### Operators in Bit Fields
 Operator | Meaning 
-----------------
+---------|------
  &	 | AND 
 	'|' |OR
-^  | XOR
-~  | One's Compliment
-<<	| Left shift
->>	| Right Shift
+      ^  | XOR
+      ~  | One's Compliment
+<<	 | Left shift
+>>	 | Right Shift
