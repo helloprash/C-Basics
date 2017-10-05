@@ -33,6 +33,7 @@ hours | Charges
 more  | 55ps
 
 Plan 3   
+
 hours | Charges
 ------|---------
 90 hr | free usage
@@ -41,6 +42,7 @@ hours | Charges
 more  | 55ps
 
 Plan 4   
+
 hours | Charges
 ------|---------
 100 hr | free usage
