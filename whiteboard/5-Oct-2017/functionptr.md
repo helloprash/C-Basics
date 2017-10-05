@@ -14,7 +14,8 @@ typedef struct usage
 
 We want to do billing based on the plan ID. Plan ID can take values 1,2,3,4 
 
-Plan 1   
+Plan 1  
+
 hours | Charges
 ------|---------
 50 hr | free usage
@@ -22,7 +23,8 @@ hours | Charges
 100   | 55ps
 more  | 60ps
 
-Plan 2   
+Plan 2
+
 hours | Charges
 ------|---------
 75 hr | free usage
