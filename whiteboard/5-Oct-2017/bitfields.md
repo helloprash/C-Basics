@@ -58,7 +58,6 @@ int main()
 Operator | Meaning 
 ---------|------
  &	 | AND 
-	'|' |OR
       ^  | XOR
       ~  | One's Compliment
 <<	 | Left shift
