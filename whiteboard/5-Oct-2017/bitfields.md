@@ -53,3 +53,12 @@ int main()
 ### Rule with Bit Wise Fields
 1. We cannot have pointers to bit field members as they may not start at a byte boundary.
 1. Array of bit fields is not allowed. For example, the below program fails in compilation.
+
+### Operators in Bit Fields
+Operator | Meaning
+&	 | AND
+|	 |OR
+^  | XOR
+~  | One's Compliment
+<<	| Left shift
+>>	| Right Shift
