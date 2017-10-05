@@ -55,8 +55,8 @@ int main()
 1. Array of bit fields is not allowed. For example, the below program fails in compilation.
 
 ### Operators in Bit Fields
-Operator | Meaning
-&	 | AND
+|Operator | Meaning |
+| &	 | AND |
 |	 |OR
 ^  | XOR
 ~  | One's Compliment
