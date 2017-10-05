@@ -116,3 +116,5 @@ void main()
 }
  ```
  
+## Differences between Struct and Union
+![Union](unionStruct.jpg?raw=true "Optional Title")
