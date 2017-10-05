@@ -39,8 +39,12 @@ int PlanFOUR(int usage)
 ```
 
 ** Declare an array of function pointers and assign the address of above functions to it  **
+```
+int (*arrayfxnpointer[4])(int)
+```
 
 Call the corresponding function pointer from the array
+
 ```
 (*arrayfxnpointer[node->pan_id-1])(node->usage)
 ```
