@@ -15,9 +15,13 @@ void multiply(int a, int b)
 int main()
 {
     // fun_ptr_arr is an array of function pointers
-    void (*fun_ptr_arr[])(int, int) = {add, subtract, multiply};
+    
+    void (*fun_ptr_arr[3])(int, int) ;
     unsigned int ch, a = 15, b = 10;
  
+    fun_ptr_arr[0] = &add ;
+    fun_ptr_arr[1] = &subtract ;
+    fun_ptr_arr[2] = &multiply ;
     printf("Enter Choice: 0 for add, 1 for subtract and 2 "
             "for multiply\n");
     scanf("%d", &ch);
