@@ -17,6 +17,29 @@ In previous days example let us say in the structure
 
 TO Invoke the correct billing plan what we can do is 
 
+Write Four Function
+
+```
+int PlanONE(int usage)
+{
+}
+
+int PlanTWO(int usage)
+{
+}
+
+int PlanTHREE(int usage)
+{
+}
+
+int PlanFOUR(int usage)
+{
+}
+
+```
+
+** Declare an array of function pointers and assign the address of above functions to it  **
+
 Call the corresponding function pointer from the array
 ```
 (*arrayfxnpointer[node->pan_id-1])(node->usage)
