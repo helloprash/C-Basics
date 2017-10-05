@@ -35,9 +35,12 @@ int main( ) {
 
    return 0;
 }
-### 2. Accessing members of Union
 ```
 
+
+### 2. Accessing members of Union
+
+```
 #include <stdio.h>
 #include <string.h>
  
