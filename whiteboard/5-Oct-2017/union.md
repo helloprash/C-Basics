@@ -29,13 +29,15 @@ union Data {
 int main( ) {
 
    union Data data;        
+   
 
    printf( "Memory size occupied by data : %d\n", sizeof(data));
 
    return 0;
 }
-```
 ### 2. Accessing members of Union
+```
+
 #include <stdio.h>
 #include <string.h>
  
@@ -62,6 +64,7 @@ int main( ) {
 ```
 
 ### 3. Accessing members one at time
+
 ```
 #include <stdio.h>
 #include <string.h>
@@ -72,7 +75,8 @@ union Data {
    char str[20];
 };
  
-int main( ) {
+int main( )
+{
 
    union Data data;        
 
@@ -87,8 +91,8 @@ int main( ) {
 
    return 0;
 }
-```
 
+```
 Here, all the members are getting printed very well because one member is being used at a time.
 
 ###  // A C program to illustrate differences  between struct and union
