@@ -13,9 +13,88 @@ union [union name]
     };
  ```
  
- ## Example Code with union
+ ## Examples Code with union
+ 
+ ### 1. Simple Example of Union and size of Union
  ```
- // C program to illustrate differences 
+#include <stdio.h>
+#include <string.h>
+ 
+union Data {
+   int i;
+   float f;
+   char str[20];
+};
+ 
+int main( ) {
+
+   union Data data;        
+
+   printf( "Memory size occupied by data : %d\n", sizeof(data));
+
+   return 0;
+}
+```
+### 2. Accessing members of Union
+#include <stdio.h>
+#include <string.h>
+ 
+union Data {
+   int i;
+   float f;
+   char str[20];
+};
+ 
+int main( ) {
+
+   union Data data;        
+
+   data.i = 10;
+   data.f = 220.5;
+   strcpy( data.str, "C Programming");
+
+   printf( "data.i : %d\n", data.i);
+   printf( "data.f : %f\n", data.f);
+   printf( "data.str : %s\n", data.str);
+
+   return 0;
+}
+```
+
+### 3. Accessing members one at time
+```
+#include <stdio.h>
+#include <string.h>
+ 
+union Data {
+   int i;
+   float f;
+   char str[20];
+};
+ 
+int main( ) {
+
+   union Data data;        
+
+   data.i = 10;
+   printf( "data.i : %d\n", data.i);
+   
+   data.f = 220.5;
+   printf( "data.f : %f\n", data.f);
+   
+   strcpy( data.str, "C Programming");
+   printf( "data.str : %s\n", data.str);
+
+   return 0;
+}
+```
+
+Here, all the members are getting printed very well because one member is being used at a time.
+
+###  // A C program to illustrate differences  between struct and union
+
+ ```
+
 // between structure and Union
 #include <stdio.h>
 #include <string.h>
