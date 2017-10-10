@@ -9,3 +9,9 @@ int main() {
    return 0;
 }
 ````
+
+## Four Main Aspects of Object Oriented programming
+1. Encapsulation
+1. Data hiding
+1. Inheritance
+1. Polymorphism
