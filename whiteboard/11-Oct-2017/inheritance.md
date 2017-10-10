@@ -62,3 +62,68 @@ main()
     
 }
 ````
+
+Another Example of Inheritance
+
+````
+#include <iostream>
+#include <string.h>
+using namespace std;
+
+class Polygon
+{
+    public :
+	  int noofSides ;
+	  float area ;
+};
+
+class Rectangle : public Polygon 
+{
+   public:
+   int length;
+   int breath ;
+   float ComputeArea()
+   {
+   	   return length * breath ;
+   }
+};
+
+class Square : public Polygon
+{
+	public:
+	int side ;
+	float ComputeArea()
+	{
+		return side * side ;
+	}
+};
+class RightTriangle : public Polygon
+{
+	int base ;
+	int height ;
+	public:
+	float ComputeArea()
+	{
+		return (base * height)/2 ;
+	}
+	void SetBase(int measurement)
+	{
+		base = measurement ;
+	}
+	void SetHeight(int measurment)
+	{
+		height = measurment; ;
+	}
+};
+
+main()
+{
+   class RightTriangle RT1 , RT2 ;
+   class Square SQ1, SQ2 ;
+   class Rectangle RA1, RA2 ;
+   
+   RT1.noofSides = 2 ;
+    
+}
+`````
+
