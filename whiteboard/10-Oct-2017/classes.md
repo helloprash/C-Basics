@@ -47,3 +47,6 @@ The various variable we had declared in a class are called members. We do not ca
 ### Public and Private members.
 The members in class can be declared as *private*  or *public*. When a  member function of member variable/data is declared as *privite* then it accesseable only the other members of the class. From outside the class, they are not accessbale or visible. Where as when a member is decleared a *public* they can be accessed by everyone. 
 *public* members of a class are the prime interface to the classes, private members are hidden for external world. To give you a good analogy, in car the *public* interfaces are the steering wheel, gear, clutch, break  horn etc. No other part of the vehicle is exposed to the user, all the other controls are needed for mechanic is hidden from the driver. Exactly like that a Class has *private* members and *public* members
+
+### Experiment
+In the above example try to change the members as privite and see what happens
