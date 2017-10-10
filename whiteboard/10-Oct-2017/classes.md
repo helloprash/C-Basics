@@ -41,3 +41,8 @@ int main() {
    return 0;
 }
 ````
+
+## Members of a Class
+The various variable we had declared in a class are called members. We do not call them as fields like C struct. This is because members can be variables (holding data) or they can function/routines which does some operation on the memebers/data.
+### Public and Private members.
+The members in class can be declared as *private*  or **public**. When a  member function of member variable/data is declared then it accesseable only the other members of the class. From outside the class, they are not accessbale or visible. Where as when a member is decleared a *public* they can be accessed by everyone. 
