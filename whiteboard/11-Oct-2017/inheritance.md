@@ -62,15 +62,16 @@ main()
     
 }
 ````
+
 ## Rules of inheritance
 
 1. A base class's private members are never accessible directly from a derived class, but can be accessed through calls to the public and protected members of the base class.
 
-1.When deriving a class from a public base class, public members of the base class become public members of the derived class and protected members of the base class become protected members of the derived class.
+1. When deriving a class from a public base class, public members of the base class become public members of the derived class and protected members of the base class become protected members of the derived class.
 
 1. Protected Inheritance − When deriving from a protected base class, public and protected members of the base class become protected members of the derived class.
 
-1.Private Inheritance − When deriving from a private base class, public and protected members of the base class become private members of the derived class.
+1. Private Inheritance − When deriving from a private base class, public and protected members of the base class become private members of the derived class.
 
 ### Another Example of Inheritance
 
