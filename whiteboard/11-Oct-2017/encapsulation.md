@@ -1,4 +1,4 @@
-#Encapsulation in C++#
+# Encapsulation in C++ #
 
 All C++ programs  two fundamental elements −
 
