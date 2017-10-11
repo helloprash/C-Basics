@@ -16,3 +16,7 @@ interference   and accidental misuse.
 
 In C++ by default, all items members of class are *privite* that means all members are hidden by default, we need to explicity use the 
 keyword *public* to expose them to outside world.
+
+In C++ Data encapsulation, provides us ability to do *Data Hiding* and *Data Abstraction*
+
+![Alt text](relative/path/to/img.jpg?raw=true "Title")
