@@ -19,4 +19,4 @@ keyword *public* to expose them to outside world.
 
 In C++ Data encapsulation, provides us ability to do *Data Hiding* and *Data Abstraction*
 
-![Alt text](relative/path/to/img.jpg?raw=true "Title")
+![Data + Methods](relative/path/to/encapsulation.jpg?raw=true "Title")
