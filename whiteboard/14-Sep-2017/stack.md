@@ -1,4 +1,4 @@
-#What are stacks #  
+# What are stacks #  
 Stacks are Last in First iut lists.They are found wide application is computer science.
 
 1. A stack is a container of objects that are inserted and removed according to the last-in first-out (LIFO) principle. 
