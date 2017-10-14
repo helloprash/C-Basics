@@ -62,3 +62,6 @@
 1. I wrote a big program, but the entry point main() is empty is there any thing wrong with it ?
 1. I have heard of a term called structures in C - what is its relation to structured programming
 1. In a  C function while declaring variables, I had mentioned a keyword *static* will this make any difference ? if so what it is ?
+1. I am writing a C  program to accuratly calculate the path of a aeroplane flying in the sky, with help of radar signals. What in the data type I need to use to get accurate value ?
+1. Arrays are easy to use,still we go with Linked list what is the reason for this ?
+1. In C function there are two terms, actual parameters and formal parameters. What are they ?
