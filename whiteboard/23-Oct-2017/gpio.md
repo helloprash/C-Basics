@@ -22,6 +22,13 @@ Storing back to memory. There are no specific instructions to access GPIO.
 
 The reason for this is, Computers do not understand GPIO, or there is no need for them  to understand GPIO, because, every GPIO pin or every external interface is mapped to a specific memory location. That means every GPIO pin has memory location and that memory location will have an address. 
 
-So by accessing the corresponding memory location we can control logical state of a GPIO pin simillarly by reading the value of the corresponding memory we can read the logical value of a GPIO PIN.
+So by accessing the corresponding memory location we can control logical state of a GPIO pin simillarly by reading the value of the corresponding memory we can read the logical value of a GPIO PIN.There by we can control the operation of a device connected to the GPIO PIN.
 
 ![GPIO](gpio-device.jpg?raw=true "Title")
+
+## Logic Probe.
+Is a simple devie that is used to know the logic state of a PIN. If the PIN is high the small LED on the probe will be ON and OFF otherwise. A Simple logic probe is something you can make yourself with a LED and a Resistor. Using a Logic probe we can see the logic state of a GPIO PIN any time.
+
+![GPIO](logic-probe.jpg?raw=true "Title")
+
+## To start with let us try how to control the logic state of a LED.
