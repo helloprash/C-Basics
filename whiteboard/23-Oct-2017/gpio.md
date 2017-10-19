@@ -45,4 +45,5 @@ SoC: Broadcom BCM2837 (The chip CPU, GPU, DSP, SDRAM)
 
 As per the User manual of this Chip BCM2837 published by Broadcom, it says that the based address of all peripheral start at 0x3F000000
 GPIO is also a peripheral. So by adding an offset to this starting address we can find the address of the memory to which GPIO pins
-are mapped to. The same document says the starting address of memory to which GPIO pins are mapped starts at the offset 0x200000. That is the first GPIO PIN will have address 0x3F000000 + 0x200000 = 0x3F200000 
+are mapped to. The same document says the starting address of memory to which GPIO pins are mapped starts at the offset 0x200000. That is the first GPIO PIN logically will have address 0x3F000000 + 0x200000 = 0x3F200000 - But things are not that simple
+We need to refer to the USer manual of Chip BCM2837
