@@ -32,3 +32,17 @@ Is a simple devie that is used to know the logic state of a PIN. If the PIN is h
 ![GPIO](logic-probe.jpg?raw=true "Title")
 
 ## To start with let us try how to control the logic state of a LED.
+The Voltage levels on GPIO pin is sufficient enough to switch ON an LED and make it glow. Now let us see to how to set the logic state of a GPIO PIN to ONE there by making the LED connected to it Glow
+
+First let is connect LED to the GPIO PIN 7 that is the anode of LED is connected to GPIO PIN 7 and cathode to the GND pin of Raspberry Pi.
+
+When the logic state of GPIO PIN 7 goes to HIGH, the LED will glow and when it goes to ZERO it stop GLOWING.
+
+To do this we need to know the Address of the memory location that is mapped to GPIO PIN 7. Let us find the address of GPIO PINs
+
+To do this we need to understand the Specification of Raspberry Pi like which CPU it uses etc. The CPU chip used in RAspberry PI 3 is 
+SoC: Broadcom BCM2837 (The chip CPU, GPU, DSP, SDRAM)
+
+As per the User manual of this Chip BCM2837 published by Broadcom, it says that the based address of all peripheral start at 0x3F000000
+GPIO is also a peripheral. So by adding an offset to this starting address we can find the address of the memory to which GPIO pins
+are mapped to. The same document says the starting address of memory to which GPIO pins are mapped starts at the offset 0x200000. That is the first GPIO PIN will have address 0x3F000000 + 0x200000 = 0x3F200000 
