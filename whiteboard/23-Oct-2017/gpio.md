@@ -20,5 +20,8 @@ This section explains how to access the GPIO of Raspberry PI
 Computers does not understand what is GPIO or ports or interfaces. All it knows is memory location. If you look at every operation in operation we see two kinds of operation, Data processing operations (Arithmetic operation, Logical operation) and Reading from memory 
 Storing back to memory. There are no specific instructions to access GPIO. 
 
-The reason for this is, Computers do not understand GPIO, or they do not have to understand GPIO, because, every GPIO pin, every interface is mapped to a specific memory location. That means every GPIO pin has memory location and that memory location will have an address. So
-by accessing the corresponding memory location we can control logical state of a GPIO pin simillarly by reading the value of the corresponding memory we can read the logical value of a GPIO PIN.
+The reason for this is, Computers do not understand GPIO, or there is no need for them  to understand GPIO, because, every GPIO pin or every external interface is mapped to a specific memory location. That means every GPIO pin has memory location and that memory location will have an address. 
+
+So by accessing the corresponding memory location we can control logical state of a GPIO pin simillarly by reading the value of the corresponding memory we can read the logical value of a GPIO PIN.
+
+![GPIO](gpio-device.jpg?raw=true "Title")
