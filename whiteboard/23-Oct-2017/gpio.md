@@ -63,5 +63,36 @@ Now lets us see how to set the logic state of each GPIO PIN
 
 The data sheet for BCM2837 says that one 32 bit memory can hold information of 10 GPIO pins, That means there will be three bit per GPIO in the memory.
 
-To find the address 
+To find the 32 bit memory location where the information of the first GPIO PIN is stored we do the following
+
+````
+*gpio.addr + 1 ;
+or for finding the g-th GPIO pin we say
+*gpio.addr + 1 ;
+`````
+But this  32 bit memory will have the logic state of 10 pins. Next step is to extract the three bits of within this 32 bit memory
+location this is done as follows
+
+Since there are 32 bit location is allocated to 10 GPIO we do
+
+````
+*gpio.addr + ((g))/10
+
+````
+
+or in short *gpio.addr + ((g))/10 is the "register" address that contains the three  bits of the GPIO pin "g". These three bit area called as GPFSEL 
+
+We need to set value of three three bits 
+
+````
+The location of these three bits inside the GPFSEL register is given by ((g)%10)*3 (three times the remainder, remember the modulo % operator).
+
+````
+The following table show the bits in 32 bit memory and the corresponding to each GPIO pins
+
+BIT | Description | TYPE
+------------------------
+31-30| This 3 bits belong to GPIO PIN 9 | Read and write |
+29-27| This 3 bits belong to GPIO PIN 8 | Read and write |
+
 
