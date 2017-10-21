@@ -61,5 +61,7 @@ This means
 
 Now lets us see how to set the logic state of each GPIO PIN
 
+The data sheet for BCM2837 says that one 32 bit memory can hold information of 10 GPIO pins, That means there will be three bit per GPIO in the memory.
 
+To find the address 
 
