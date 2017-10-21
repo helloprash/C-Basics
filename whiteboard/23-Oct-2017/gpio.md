@@ -17,14 +17,22 @@ Simillarly if we want to read data from a sensor we connect the sensor to one of
 This section explains how to access the GPIO of Raspberry PI
 
 ## How to access GPIO
-Computers does not understand what is GPIO or ports or interfaces. All it knows is memory location. If you look at every operation in operation we see two kinds of operation, Data processing operations (Arithmetic operation, Logical operation) and Reading from memory 
-Storing back to memory. There are no specific instructions to access GPIO. 
+Computers does not understand what is GPIO or ports or interfaces. All it knows is memory location. If you look at every operation in operation we see two kinds of operation, 
+
+1. Data processing operations (Arithmetic operation, Logical operation) 
+1. Reading from memory  and Storing back to memory. 
+
+There are no specific instructions to access GPIO.
 
 The reason for this is, Computers do not understand GPIO, or there is no need for them  to understand GPIO, because, every GPIO pin or every external interface is mapped to a specific memory location. That means every GPIO pin has memory location and that memory location will have an address. 
+
+The memory location and Physical GPIO pins are connected together through digitial circuits (hard wired)
 
 So by accessing the corresponding memory location we can control logical state of a GPIO pin simillarly by reading the value of the corresponding memory we can read the logical value of a GPIO PIN.There by we can control the operation of a device connected to the GPIO PIN.
 
 ![GPIO](gpio-device.jpg?raw=true "Title")
+
+The above diagram show the GPIO pins their numbers and locations on Raspberry PI.
 
 ## Logic Probe.
 Is a simple devie that is used to know the logic state of a PIN. If the PIN is high the small LED on the probe will be ON and OFF otherwise. A Simple logic probe is something you can make yourself with a LED and a Resistor. Using a Logic probe we can see the logic state of a GPIO PIN any time.
@@ -44,6 +52,14 @@ To do this we need to understand the Specification of Raspberry Pi like which CP
 SoC: Broadcom BCM2837 (The chip CPU, GPU, DSP, SDRAM)
 
 As per the User manual of this Chip BCM2837 published by Broadcom, it says that the based address of all peripheral start at 0x3F000000
-GPIO is also a peripheral. So by adding an offset to this starting address we can find the address of the memory to which GPIO pins
-are mapped to. The same document says the starting address of memory to which GPIO pins are mapped starts at the offset 0x200000. That is the first GPIO PIN logically will have address 0x3F000000 + 0x200000 = 0x3F200000 - But things are not that simple
-We need to refer to the USer manual of Chip BCM2837
+
+####GPIO is also a peripheral.####
+This means
+
+1. Since we know the starting address of the memory location of the first GPIO PIN we can write the required data to set the pin 1 to ZERO or ONE
+1. By adding a required offset to the starting address (address of GPIO PIN 1) we can get the address of all other GPIO pins. There by can control the logic state of the pins.
+
+Now lets us see how to set the logic state of each GPIO PIN
+
+
+
