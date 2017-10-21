@@ -32,7 +32,7 @@ So by accessing the corresponding memory location we can control logical state o
 
 ![GPIO](gpio-device.jpg?raw=true "Title")
 
-The above diagram show the GPIO pins their numbers and locations on Raspberry PI.
+The above diagram show the GPIO pins their numbers and locations on Raspberry PI and how external devices are connected to them.
 
 ## Logic Probe.
 Is a simple devie that is used to know the logic state of a PIN. If the PIN is high the small LED on the probe will be ON and OFF otherwise. A Simple logic probe is something you can make yourself with a LED and a Resistor. Using a Logic probe we can see the logic state of a GPIO PIN any time.
