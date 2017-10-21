@@ -57,9 +57,13 @@ As per the User manual of this Chip BCM2837 published by Broadcom, it says that 
 This means
 
 1. Since we know the starting address of the memory location of the first GPIO PIN we can write the required data to set the pin 1 to ZERO or ONE
-1. By adding a required offset to the starting address (address of GPIO PIN 1) we can get the address of all other GPIO pins. There by can control the logic state of the pins.
+1. By adding a required offset to the starting address (address of GPIO PIN 1) we can get the address of all other GPIO pins. There by can control the function and  logic state of the pins.
 
-Now lets us see how to set the logic state of each GPIO PIN
+Before we start using a GPIO PIN we set it whether it is going to be INPUT PIN or an OUTPUT PIN. A GPIO PIN can be configured to do many thing like OUTPUT PIN, INPUT PIN or work a pin which supports Protocol for accessing peripheral. 
+
+The functionality of a GPIO is controlled by a memory called  GPSEL Register 
+
+Now lets us see how to set the **functionality**  of each GPIO PIN using the GPSEL Register in memor
 
 The data sheet for BCM2837 says that one 32 bit memory can hold information of 10 GPIO pins, That means there will be three bit per GPIO in the memory.
 
