@@ -92,7 +92,7 @@ The following table show the bits in 32 bit memory and the corresponding to each
 
 |BIT | Description | TYPE
 -----|-------------|-----
-|31-30| This 3 bits belong to GPIO PIN 9 | Read and write|
+|31-30| Reserved for other purpose | Read ONLY|
 |29-27| This 3 bits belong to GPIO PIN 9 | Read and write |
 |26-24| This 3 bits belong to GPIO PIN 8 | Read and write |
 |23-21| This 3 bits belong to GPIO PIN 7 | Read and write |
@@ -103,3 +103,5 @@ The following table show the bits in 32 bit memory and the corresponding to each
 |8-6| This 3 bits belong to GPIO PIN 2 | Read and write |
 |5-3| This 3 bits belong to GPIO PIN 1 | Read and write |
 |2-0| This 3 bits belong to GPIO PIN 0 | Read and write |
+
+The User Manual says when we set the three bits corresponding each pin 
