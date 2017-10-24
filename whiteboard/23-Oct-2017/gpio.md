@@ -328,11 +328,14 @@ int main(
 }
 ````
 This way we can set the GPSEL  and configure the functionality of a GPIO PIN
-
+***
 ## How to set Logic levels of GPIO.
 
 Just like we had configured the functionality of GPIO as INPUT or OUTPUT, we can set the logic state of PIN just like we set flip-flop
-As each GPIO is mapped to a memory just by setting the bit in corresponding location we n
+As each GPIO is mapped to a memory just by setting the bit in corresponding location we can change the logic state of each PIN
+
+We know the starting address of memory location where GPIO are mapped to this is gpio.addr 
+gpio.addr  + 
 
 
 
