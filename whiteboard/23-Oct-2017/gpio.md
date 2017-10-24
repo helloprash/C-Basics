@@ -335,7 +335,11 @@ Just like we had configured the functionality of GPIO as INPUT or OUTPUT, we can
 As each GPIO is mapped to a memory just by setting the bit in corresponding location we can change the logic state of each PIN
 
 We know the starting address of memory location where GPIO are mapped to this is gpio.addr 
-gpio.addr  + 
+gpio.addr  +  0 mean the GPSEL register for GPIO 0 to 9   
+
+The user manual says at the address, gpio.addr + 7 (that is gpio.addr + 7x 8 bytes away) there is a  32 bit memory location
+which can be used to set the values of the 26 GPIP pins on Rpi each of these 26pin are mapped to bit in the above memory location.
+
 
 
 
