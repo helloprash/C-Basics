@@ -132,7 +132,7 @@ The GPSEL address containing the function select bits for gpio 10  is *gpio.addr
 So this mean bit corresponding to GPIO pins 0 to 9 are stored in the same register. There is no way to address 
 bits and change them if we want to modify any bit we need to access the whole register. 
 The way we do it is as follows:
-
+````
 1. Let us say we want to set the GPIO PIN 2 to INPUT mode. 
 1. Find the bit which control GPIO 2 PIN. Those are  8,7,6  bit as per the above table. 
 1. We will set these three  bits of the GPSEL register to 000 without impacting other bit of the GPSEL Register
@@ -143,3 +143,4 @@ The way we do it is as follows:
    So our new bit mask will have value 11111111111111111111111000111111 or ‭0xFFFFFE3F‬
 1. Now do a bit wise AND operation of this bit mask with GPSEL REGISTER and assign it to back to GPSEL. What will happen now ?
 1. Result is : Bits 8,7,6 has set to ZERO where as all the remaining bits remains unchanged in GPSEL.
+````
