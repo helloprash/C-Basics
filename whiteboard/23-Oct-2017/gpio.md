@@ -246,3 +246,5 @@ void IN_GPIO(in g)
 
 
 ````
+
+This way we can set the GPSEL 
