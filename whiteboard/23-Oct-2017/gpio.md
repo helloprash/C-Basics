@@ -53,26 +53,29 @@ SoC: Broadcom BCM2837 (The chip CPU, GPU, DSP, SDRAM)
 
 As per the User manual of this Chip BCM2837 published by Broadcom, it says that the based address of all peripheral start at 0x3F000000
 
-####GPIO is also a peripheral.####
+#### GPIO is also a peripheral.####
 This means
 
 1. Since we know the starting address of the memory location of the first GPIO PIN we can write the required data to set the pin 1 to ZERO or ONE
 1. By adding a required offset to the starting address (address of GPIO PIN 1) we can get the address of all other GPIO pins. There by can control the function and  logic state of the pins.
 
-Before we start using a GPIO PIN we set it whether it is going to be INPUT PIN or an OUTPUT PIN. A GPIO PIN can be configured to do many thing like OUTPUT PIN, INPUT PIN or work a pin which supports Protocol for accessing peripheral. 
+GPIO mean **G**eneral **P**urpose **I**nput **O**utput pin. This means before using a GPIO we need configure it as a output pin or as a input.  In addition for being and INPUT or OUTPUT pin GPIO can also work as pin which support Protocols for accessing peripheral devices
 
-The functionality of a GPIO is controlled by a memory called  GPSEL Register 
+Before we start using a GPIO PIN we set it whether it is going to be INPUT PIN or an OUTPUT PIN. A GPIO PIN can be configured to do many thing like OUTPUT PIN, INPUT PIN or work a pin which supports Protocol for accessing peripheral.  For there is small region in the memory called *GPSEL Register* (same RAM itself) The value stored in this register will decide the function of GPIO PIN whether it is INPUT or OUTPUT pin.
 
-Now lets us see how to set the **functionality**  of each GPIO PIN using the GPSEL Register in memor
+In short the functionality of a GPIO is controlled by a memory called  GPSEL Register 
 
-The data sheet for BCM2837 says that one 32 bit memory can hold information of 10 GPIO pins, That means there will be three bit per GPIO in the memory.
+Now lets us see how to set the **functionality**  of each GPIO PIN using the GPSEL Register in memory
 
-To find the 32 bit memory location where the information of the first GPIO PIN is stored we do the following
+The data sheet for BCM2837 says that GPSEL registers are 32 bit memory and it can control the behaviour of 10 pins. 
+That means there will be three bit per GPIO in the memory. (LEt us ignore that last 2 two bits for now)
+
+To find the 32 bit memory location where the information of the first (1-st)  GPIO PIN is stored we do the following
 
 ````
 *gpio.addr + 1 ;
 or for finding the g-th GPIO pin we say
-*gpio.addr + 1 ;
+*gpio.addr + g ;
 `````
 But this  32 bit memory will have the logic state of 10 pins. Next step is to extract the three bits of within this 32 bit memory
 location this is done as follows
@@ -89,8 +92,15 @@ or in short *gpio.addr + ((g))/10 is the "register" address that contains the th
 We need to set value of three three bits 
 
 ````
-The location of these three bits inside the GPFSEL register is given by ((g)%10)*3 (three times the remainder, remember the modulo % operator).
+The location of these three bits inside the GPFSEL register is given by ((g)%10)*3 (three times the remainder, 
+remember the modulo % operator).
 
+For 0-st pin it will (0 % 10) * 3  = 0 * 3 = 0 - This means GPIO 0 is controlled by 0,1,2 bit of the register  
+For 1-st pin it will (1 % 10) * 3  = 1 * 3 = 3 - This means GPIO 0 is controlled by 3,4,5 bit of the register  
+For 2-st pin it will (2 % 10) * 3  = 2 * 3 = 6 - This means GPIO 0 is controlled by 6,7,8 bit of the register  
+For 3-st pin it will (3 % 10) * 3 =  3 * 3 = 9 - This means GPIO 0 is controlled by 9,10,11 bit of the register  
+.................
+............................
 ````
 The following table show the bits in 32 bit memory and the corresponding to each GPIO pins
 
@@ -108,4 +118,4 @@ The following table show the bits in 32 bit memory and the corresponding to each
 |5-3| This 3 bits belong to GPIO PIN 1 | Read and write |
 |2-0| This 3 bits belong to GPIO PIN 0 | Read and write |
 
-The User Manual says when we set the three bits corresponding each pin 
+The User Manual says how to set the these three **BITS** of this register belonging to each PIN to make it work as INPUT OR OUTPUT OR PROTOCOL PIN. Since there are three bits, we can have eight combinations and hence there can be eight modes in which each GPIO can be configured. That is apart from INPUT and OUPUT modes, there will be six other combination. When set three bit of a this register to 000 the pin will be configured as INPUT and 001 it will be configured as OUTPUT and the other six combination 010 to 111 we call them as alternate functions
