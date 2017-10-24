@@ -122,15 +122,18 @@ The User Manual says how to set the these three **BITS** of this register belong
 
 When set three bit of a this register to 000 the pin will be configured as INPUT and 001 it will be configured as OUTPUT and the other six combination 010 to 111 we call them as alternate functions
 
-Let us see how to set the GPSEL Register PINs for PIN 0 to 10 
+Let us see how to set the GPSEL Register PINs for PIN 0 to 10
+````
 The GPSEL address containing the function select bits for gpio 0  is *gpio.addr + 0/10= *gpio.addr + 0
 The GPSEL address containing the function select bits for gpio 0  is *gpio.addr + 1/10= *gpio.addr + 0
 .....................................................................................................
 ......................................................................................................
 The GPSEL address containing the function select bits for gpio 10  is *gpio.addr + 10/10=*gpio.addr + 1
-
+````
 So this mean bit corresponding to GPIO pins 0 to 9 are stored in the same register. There is no way to address 
-bits and change them if we want to modify any bit we need to access the whole register. 
+bits and change them individually. So, if we want to modify any bit we need to access the whole register with
+out impacting other bits. So we use a concept called bit-mask for this.
+
 The way we do it is as follows:
 
 
