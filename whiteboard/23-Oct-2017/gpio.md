@@ -132,15 +132,29 @@ The GPSEL address containing the function select bits for gpio 10  is *gpio.addr
 So this mean bit corresponding to GPIO pins 0 to 9 are stored in the same register. There is no way to address 
 bits and change them if we want to modify any bit we need to access the whole register. 
 The way we do it is as follows:
+
+
 ````
 1. Let us say we want to set the GPIO PIN 2 to INPUT mode. 
-1. Find the bit which control GPIO 2 PIN. Those are  8,7,6  bit as per the above table. 
-1. We will set these three  bits of the GPSEL register to 000 without impacting other bit of the GPSEL Register
-1. For this we create 32 bit variable which we will call as bit mask  and set all it bits to 1 that is 0xFFFF FFFF
-1. Let say if we do a bit wise AND operation of  this bit mask with GPSEL REGISTER and assign to to GPSEL what happenes ?
-1. Result is : All the bit of GPSEL will remain unchanged.
-1. Now what we will do set the 8,7 and 6 bits of this mask to 0s rest of the bits will remain unchanged.
+2. Find the bit which control GPIO 2 PIN. Those are  8,7,6  bit as per the above table. 
+3. We will set these three  bits of the GPSEL register to 000 without impacting other bit of the GPSEL Register
+4. For this we create 32 bit variable which we will call as bit mask  and set all it bits to 1 that is 0xFFFF FFFF
+    Thatis 
+             int bitMask;
+             bitMask = 0xFFFFFFFF;
+5. Let say if we do a bit wise AND operation of  this bit mask with GPSEL REGISTER and assign to to GPSEL what happenes ?
+   That is 
+          GPSEL = GPSEL & bitMask ;
+6. Result is : All the bit of GPSEL will remain unchanged.
+7. Now what we will do set the 8,7 and 6 bits of this mask to 0s rest of the bits will remain unchanged.
    So our new bit mask will have value 11111111111111111111111000111111 or ‭0xFFFFFE3F‬
-1. Now do a bit wise AND operation of this bit mask with GPSEL REGISTER and assign it to back to GPSEL. What will happen now ?
-1. Result is : Bits 8,7,6 has set to ZERO where as all the remaining bits remains unchanged in GPSEL.
+   That is bitMask = 0xFFFFFE3F ;
+8. Now do a bit wise AND operation of this bit mask with GPSEL REGISTER and assign it to back to GPSEL. What will happen now ?
+    That is:
+        GPSEL = GPSEL & bitMask ;
+9. Result is : Bits 8,7,6 has set to ZERO where as all the remaining bits remains unchanged in GPSEL.
 ````
+
+So for all the GPIO pins we first find the address of GPSEL register where the information is stored find the bits corresponding
+to the pin of our interest. Create bit mask to set the corresponding bit and do a Bit wise AND of the mask with GPSEL and assign 
+the result back to GPSEL itself.
