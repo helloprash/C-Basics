@@ -357,7 +357,7 @@ The Reset the GPIO we need another address. The same address once Set will set t
 To reset we have differnt location which is base address + 10 location (10 X 32 bytes)
 
 ````
-void SetGPIO(int gpio)
+void ClearGPIO(int gpio)
 {
   *(gpio.addr + 10)  = 1 << gpio ;
 }
