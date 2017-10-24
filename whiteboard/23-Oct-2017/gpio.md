@@ -125,7 +125,7 @@ When set three bit of a this register to 000 the pin will be configured as INPUT
 Let us see how to set the GPSEL Register PINs for PIN 0 to 10
 ````
 The GPSEL address containing the function select bits for gpio 0  is *gpio.addr + 0/10= *gpio.addr + 0
-The GPSEL address containing the function select bits for gpio 0  is *gpio.addr + 1/10= *gpio.addr + 0
+The GPSEL address containing the function select bits for gpio 1  is *gpio.addr + 1/10= *gpio.addr + 0
 .....................................................................................................
 ......................................................................................................
 The GPSEL address containing the function select bits for gpio 10  is *gpio.addr + 10/10=*gpio.addr + 1
@@ -171,3 +171,68 @@ So for all the GPIO pins we first find the address of GPSEL register where the i
 corresponding to the pin of our interest. Create bit mask to set the corresponding bit and do a Bit wise AND of the mask 
 with GPSEL and assign  the result back to GPSEL itself.
 
+### Let us write a small C function to configure a given GPIO as OUTPUT
+
+````
+int *gpio.addr  // This is set intially.
+
+void OUT_GPIO(in g)
+{
+    int bitMask;
+    int *GPSEL ;
+    // Depending on which pin to set as ouput we need to set the corresponding bits to 001
+    // ((g)%10)*3 will tell us the first bit that need to modified. Then the next two bits also need to be modified
+    bitMask = 0x1 ;   //0000 0000 0000 0000 0000 0000 0000 0001
+    bitMask = bitMask << ((g)%10)*3 ; 
+    
+    // eg for pin 1  the bits 5,4,3 will be set to 001  0000 0000 0000 0000 0000 0000 0000 1000
+    //    for pin 2  the bits 8,7,6 will be set to 001  0000 0000 0000 0000 0000 0000 0100 0000
+    //    for pin 3  the bits 11,10,9 will be set to 001  0000 0000 0000 0000 0000 0010 0000 0000    
+    // NOW do BIT WISE AND with the value of GPSEL REGISTER and assign the results back toGPSEL itself
+    // WHEN we OR GPSEL WITH bitMas orginal values of GPSEL will remain same where ever bitMask as zero w
+    // and in places where is the ONE the GPSEL bit will be changed to ONE.
+    
+    //*gpio.addr  has the base address
+    // Add base address to pin/10 to get the GPSEL register address
+    GPSEL = *gpio.addr + g/10 ; /* For pins 0 to 9 this will be same */
+    GPSEL = GPSEL | bitMask ;
+}
+````
+
+### Let us write a small C function to configure a given GPIO as INPUT
+
+````
+int *gpio.addr  // This is set intially.
+
+void IN_GPIO(in g)
+{
+    int bitMask;
+    int *GPSEL ;
+    // Depending on which pin to set as ouput we need to set the corresponding bits to 000
+    // ((g)%10)*3 will tell us the first bit that need to modified. Then the next two bits also need to be modified
+    bitMask = 0x7 ;   //0000 0000 0000 0000 0000 0000 0000 0111
+    bitMask = bitMask << ((g)%10)*3 ; 
+    
+    // eg for pin 1  the bits 5,4,3 will be set to 000    0000 0000 0000 0000 0000 0000 0011 1000
+    //    for pin 2  the bits 8,7,6 will be set to 000    0000 0000 0000 0000 0000 0001 1100 0000
+    //    for pin 3  the bits 11,10,9 will be set to 000  0000 0000 0000 0000 0000 1110 0000 0000    
+
+    // NOW WE WIll do bit wise compliment of all bits in the bitMask
+    bitMask = ~bitMask
+    // eg for pin 1  the bits 5,4,3 will be set to 000    1111 1111 1111 1111 1111 1111 1100 0111
+    //    for pin 2  the bits 8,7,6 will be set to 000    1111 1111 1111 1111 1111 1110 0011 1111
+    //    for pin 3  the bits 11,10,9 will be set to 000  1111 1111 1111 1111 1111 0001 1111 1111
+    
+    
+    // NOW do BIT WISE AND with the value of GPSEL REGISTER and assign the results back to GPSEL itself
+    // WHEN we do AND  GPSEL WITH bitMask orginal values of GPSEL will remain same where ever bitMask has ones w
+    // and in places where is the ZERO the GPSEL bit will be changed to ZERO
+    
+    //*gpio.addr  has the base address 
+    GPSEL = *gpio.addr + g/10 ;  // Add base address to pin/10 to get the GPSEL register address
+    //GPSEL is pointing to the memory which has the configuraiton information of the pin 
+    GPSEL = GPSEL & bitMask ;
+}
+
+
+````
