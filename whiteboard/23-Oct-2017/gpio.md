@@ -118,4 +118,28 @@ The following table show the bits in 32 bit memory and the corresponding to each
 |5-3| This 3 bits belong to GPIO PIN 1 | Read and write |
 |2-0| This 3 bits belong to GPIO PIN 0 | Read and write |
 
-The User Manual says how to set the these three **BITS** of this register belonging to each PIN to make it work as INPUT OR OUTPUT OR PROTOCOL PIN. Since there are three bits, we can have eight combinations and hence there can be eight modes in which each GPIO can be configured. That is apart from INPUT and OUPUT modes, there will be six other combination. When set three bit of a this register to 000 the pin will be configured as INPUT and 001 it will be configured as OUTPUT and the other six combination 010 to 111 we call them as alternate functions
+The User Manual says how to set the these three **BITS** of this register belonging to each PIN to make it work as INPUT OR OUTPUT OR PROTOCOL PIN. Since there are three bits, we can have eight combinations and hence there can be eight modes in which each GPIO can be configured. That is apart from INPUT and OUPUT modes, there will be six other combination. 
+
+When set three bit of a this register to 000 the pin will be configured as INPUT and 001 it will be configured as OUTPUT and the other six combination 010 to 111 we call them as alternate functions
+
+Let us see how to set the GPSEL Register PINs for PIN 0 to 10 
+The GPSEL address containing the function select bits for gpio 0  is *gpio.addr + 0/10= *gpio.addr + 0
+The GPSEL address containing the function select bits for gpio 0  is *gpio.addr + 1/10= *gpio.addr + 0
+.....................................................................................................
+......................................................................................................
+The GPSEL address containing the function select bits for gpio 10  is *gpio.addr + 10/10=*gpio.addr + 1
+
+So this mean bit corresponding to GPIO pins 0 to 9 are stored in the same register. There is no way to address 
+bits and change them if we want to modify any bit we need to access the whole register. 
+The way we do it is as follows:
+
+1. Let us say we want to set the GPIO PIN 2 to INPUT mode. 
+1. Find the bit which control GPIO 2 PIN. Those are  8,7,6  bit as per the above table. 
+1. We will set these three  bits of the GPSEL register to 000 without impacting other bit of the GPSEL Register
+1. For this we create 32 bit variable which we will call as bit mask  and set all it bits to 1 that is 0xFFFF FFFF
+1. Let say if we do a bit wise AND operation of  this bit mask with GPSEL REGISTER and assign to to GPSEL what happenes ?
+1. Result is : All the bit of GPSEL will remain unchanged.
+1. Now what we will do set the 8,7 and 6 bits of this mask to 0s rest of the bits will remain unchanged.
+   So our new bit mask will have value 11111111111111111111111000111111 or ‭0xFFFFFE3F‬
+1. Now do a bit wise AND operation of this bit mask with GPSEL REGISTER and assign it to back to GPSEL. What will happen now ?
+1. Result is : Bits 8,7,6 has set to ZERO where as all the remaining bits remains unchanged in GPSEL.
