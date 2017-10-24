@@ -344,7 +344,24 @@ Hence by setting the bits of this memory location we can set the logic values of
 To set GPIO PIN 5 we say  
    *(gpio.addr+7) = 1 << 5
 
+A  C function will be like this
 
+````
+void SetGPIO(int gpio)
+{
+   *(gpio.addr+7) = 1 << gpio ;
+}
+````
+
+The Reset the GPIO we need another address. The same address once Set will set the logic state of GPIO for every
+To reset we have differnt location which is base address + 10 location (10 X 32 bytes)
+
+````
+void SetGPIO(int gpio)
+{
+  *(gpio.addr + 10)  = 1 << gpio ;
+}
+````
 
 
 
