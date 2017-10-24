@@ -185,13 +185,19 @@ void OUT_GPIO(in g)
     bitMask = 0x1 ;   //0000 0000 0000 0000 0000 0000 0000 0001
     bitMask = bitMask << ((g)%10)*3 ; 
     
-    // eg for pin 1  the bits 5,4,3 will be set to 001  0000 0000 0000 0000 0000 0000 0000 1000
-    //    for pin 2  the bits 8,7,6 will be set to 001  0000 0000 0000 0000 0000 0000 0100 0000
+    // eg for pin 1  the bits 5,4,3 will be set to 001    0000 0000 0000 0000 0000 0000 0000 1000
+    //    for pin 2  the bits 8,7,6 will be set to 001    0000 0000 0000 0000 0000 0000 0100 0000
     //    for pin 3  the bits 11,10,9 will be set to 001  0000 0000 0000 0000 0000 0010 0000 0000    
-    // NOW do BIT WISE AND with the value of GPSEL REGISTER and assign the results back toGPSEL itself
-    // WHEN we OR GPSEL WITH bitMas orginal values of GPSEL will remain same where ever bitMask as zero w
+    // NOW do BIT WISE OR  with the value of GPSEL REGISTER and assign the results back toGPSEL itself
+    // WHEN we OR GPSEL WITH bitMask orginal values of GPSEL will remain same where ever bitMask as zero w
     // and in places where is the ONE the GPSEL bit will be changed to ONE.
     
+    // xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx  OR
+    // 0000 0000 0000 0000 0000 0010 0000 0000
+    ---------------------------------------------
+    // xxxx xxxx xxxx xxxx xxxx 001x xxxx xxxx In case bit 10 and 11 is  0 they will remain same 
+    // otherwise if they 1 we will have a problem.
+    // Hence We need to call IN_GPIO(g) before calling OUT_GPIO() always.
     //*gpio.addr  has the base address
     // Add base address to pin/10 to get the GPSEL register address
     GPSEL = *gpio.addr + g/10 ; /* For pins 0 to 9 this will be same */
@@ -228,6 +234,10 @@ void IN_GPIO(in g)
     // WHEN we do AND  GPSEL WITH bitMask orginal values of GPSEL will remain same where ever bitMask has ones w
     // and in places where is the ZERO the GPSEL bit will be changed to ZERO
     
+    // xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx  AND
+    // 1111 1111 1111 1111 1111 0001 1111 1111
+    ---------------------------------------------
+       xxxx xxxx xxxx xxxx xxxx 000x xxxx xxxx
     //*gpio.addr  has the base address 
     GPSEL = *gpio.addr + g/10 ;  // Add base address to pin/10 to get the GPSEL register address
     //GPSEL is pointing to the memory which has the configuraiton information of the pin 
