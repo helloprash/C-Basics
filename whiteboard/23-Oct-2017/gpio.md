@@ -53,7 +53,7 @@ SoC: Broadcom BCM2837 (The chip CPU, GPU, DSP, SDRAM)
 
 As per the User manual of this Chip BCM2837 published by Broadcom, it says that the based address of all peripheral start at 0x3F000000
 
-#### GPIO is also a peripheral.####
+#### GPIO is also a peripheral.
 This means
 
 1. Since we know the starting address of the memory location of the first GPIO PIN we can write the required data to set the pin 1 to ZERO or ONE
@@ -73,6 +73,8 @@ That means there will be three bit per GPIO in the memory. (LEt us ignore that l
 To find the 32 bit memory location where the information of the first (1-st)  GPIO PIN is stored we do the following
 
 ````
+//gpio.addr can be found out using function call.
+
 *gpio.addr + 1 ;
 or for finding the g-th GPIO pin we say
 *gpio.addr + g ;
@@ -208,8 +210,6 @@ void OUT_GPIO(in g)
 ### Let us write a small C function to configure a given GPIO as INPUT
 
 ````
-int *gpio.addr  // This is set intially.
-
 void IN_GPIO(in g)
 {
     int bitMask;
@@ -247,4 +247,92 @@ void IN_GPIO(in g)
 
 ````
 
-This way we can set the GPSEL 
+Here is the main program
+
+````
+#include <stdio.h>
+ 
+#include <sys/mman.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+ 
+#include <unistd.h>
+ 
+#define BCM2708_PERI_BASE       0x20000000
+#define GPIO_BASE               (BCM2708_PERI_BASE + 0x200000)	// GPIO controller 
+ 
+#define BLOCK_SIZE 		(4*1024)
+ 
+// IO Acces
+struct bcm2835_peripheral {
+    unsigned long addr_p;
+    int mem_fd;
+    void *map;
+    volatile unsigned int *addr;
+};
+ 
+ 
+struct bcm2835_peripheral gpio = {GPIO_BASE};
+ 
+// Exposes the physical address defined in the passed structure using mmap on /dev/mem
+int map_peripheral(struct bcm2835_peripheral *p)
+{
+   // Open /dev/mem
+   if ((p->mem_fd = open("/dev/mem", O_RDWR|O_SYNC) ) < 0) {
+      printf("Failed to open /dev/mem, try checking permissions.\n");
+      return -1;
+   }
+ 
+   p->map = mmap(
+      NULL,
+      BLOCK_SIZE,
+      PROT_READ|PROT_WRITE,
+      MAP_SHARED,
+      p->mem_fd,      // File descriptor to physical memory virtual file '/dev/mem'
+      p->addr_p       // Address in physical map that we want this memory block to expose
+   );
+ 
+   if (p->map == MAP_FAILED) {
+        perror("mmap");
+        return -1;
+   }
+ 
+   p->addr = (volatile unsigned int *)p->map;
+ 
+   return 0;
+}
+
+int main(
+{
+  if(map_peripheral(&gpio) == -1) 
+  {
+    printf("Failed to map the physical GPIO registers into the virtual memory space.\n");
+    return -1;
+  }
+ 
+  // Define pin 7 as output
+  INP_GPIO(4);
+  OUT_GPIO(4);
+ 
+  while(1)
+  {
+    // Toggle pin 7 (blink a led!)
+    GPIO_SET = 1 << 4;
+    sleep(1);
+ 
+    GPIO_CLR = 1 << 4;
+    sleep(1);
+  }
+ 
+  return 0; 
+}
+````
+This way we can set the GPSEL  and configure the functionality of a GPIO PIN
+
+## How to set Logic levels of GPIO.
+
+Just like we had configured the functionality of GPIO as INPUT or OUTPUT, we can set the logic state of PIN just like we set flip-flop
+As each GPIO is mapped to a memory just by setting the bit in corresponding location we n
+
+
+
