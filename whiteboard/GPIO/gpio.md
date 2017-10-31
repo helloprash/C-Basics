@@ -214,7 +214,7 @@ void IN_GPIO(in g)
 {
     int bitMask;
     int *GPSEL ;
-    // Depending on which pin to set as ouput we need to set the corresponding bits to 000
+    // Depending on which pin to set as input  we need to set the corresponding bits to 000
     // ((g)%10)*3 will tell us the first bit that need to modified. Then the next two bits also need to be modified
     bitMask = 0x7 ;   //0000 0000 0000 0000 0000 0000 0000 0111
     bitMask = bitMask << ((g)%10)*3 ; 
