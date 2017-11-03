@@ -27,5 +27,7 @@ HINT: In the server program the change you need to make is replace the printf() 
 
 ## What is expected
 1. The 7 LEDs can be controlled from client
-1 No expections, it has to work smoothly with out crashing after a set of muliple ON OFF Sequence. It should return the status correctly.
+1. No expections, it has to work smoothly with out crashing after a set of muliple ON OFF Sequence. It should return the status correctly.
+
+## Flow Chart
 ![alt text](IoT.jpg "Logo Title Text 1")
