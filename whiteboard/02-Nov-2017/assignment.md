@@ -18,7 +18,7 @@ once this command return, it will tell us the status of LED after executing the 
 in case the LED is already OFF, it will say : **LED <number> is already in OFF state so no action taken**
 
 $ *STATUS* <led number> --> will return the status of the given LED is ON or OFF
-```
+````
 
 Remember it is the server which is talking to GPIO to set and reset its logical state. The same program need to keep track of the status of 
 each LED in a array. 
