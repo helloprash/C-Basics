@@ -9,8 +9,10 @@ Implement a program to switch ON and OFF a particular LED on the RPi, you connec
 run the server program in RPi. On a second RPi, runs the client. Client runs in a infinite loop like a command prompt
 taking input from users. The user provides a number between 1 and 7 including 1 ad 7. The corresponding LED will glow.
 The way to give the number is 
-````
+
 <span style="color:blue">some *Raspberry Pi Screen.* text</span>
+
+````
 
 $ *embedded:/home/pi>* ./client
 
