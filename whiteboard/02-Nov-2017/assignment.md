@@ -10,14 +10,20 @@ run the server program in RPi. On a second RPi, runs the client. Client runs in 
 taking input from users. The user provides a number between 1 and 7 including 1 ad 7. The corresponding LED will glow.
 The way to give the number is 
 ````
-$ *ON* <led number> --> this will switch ON the LED once this command return, it will tell us the status of LED after executing the command
+$ *embedded:/home/pi>* ./client
+
+This should start the client program in the current window and client will display prompt.
+
+client> *ON* <led number> --> this will switch ON the LED once this command return, it will tell us the status of LED after executing the command
 in case the LED is already ON, it will say : **LED <number> is already in ON state so no action taken**
 
-$ *OFF* <led number> --> this will switch OFF the LED.
+client> *OFF* <led number> --> this will switch OFF the LED.
 once this command return, it will tell us the status of LED after executing the command
 in case the LED is already OFF, it will say : **LED <number> is already in OFF state so no action taken**
 
-$ *STATUS* <led number> --> will return the status of the given LED is ON or OFF
+client> *STATUS* <led number> --> will return the status of the given LED is ON or OFF
+
+client>Quit --> you can exit the client program from here.
 ````
 
 Remember it is the server which is talking to GPIO to set and reset its logical state. The same program need to keep track of the status of 
