@@ -16,5 +16,5 @@ AS soon as chat application is started by user A it creates  server and wait for
 
 
 So to make thing easier what you should do is start by implementing a single side chat program User A just send message and user B can recieve it and display it using printf() Now modify this program so that User B can send message to A and A can display it using printf()
-![GitHub Logo](/images/chat.jpg)
+![Chat](chat.jpg)
 
