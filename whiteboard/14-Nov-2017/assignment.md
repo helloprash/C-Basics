@@ -45,11 +45,11 @@ the help of diagram. - Map TCP/IP layerd to OSI model
 1. Trignometric functions like sin cos etc are available as build in libraries in C
    write a C function to find sin(x) using Infinite series what you had learned in maths
    we will convert this into libray in the next week.
-   Prashant - To implement Sin(x)
-   Robin - To implement Cos(x)   
-   Sushmitha  To implement Log(x)
-   Vanitha - To implement E to the power of x
-   Shilpa - Tan(x) 
+   * Prashant - To implement Sin(x)
+   *  Robin - To implement Cos(x)   
+   * Sushmitha  To implement Log(x)
+   *  Vanitha - To implement E to the power of x
+   * Shilpa - Tan(x) 
 1. What is the difference between Virtual memory address (also know an logical) and Physical address. 
    why do operating system has two such modes of addressing ? - Explain 
    
